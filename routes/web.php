@@ -14,7 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PageController::class, 'index']);
-Route::get('/{id}', [PageController::class, 'show']);
-Route::get('/create', [PageController::class, 'create']);
-Route::post('/store', [PageController::class, 'store']);
+// PASTAS CRUD
+
+// index
+Route::get('/comics', [PageController::class, 'index'])->name('comics.index');
+
+// create (deve stare prima della show nel caso in cui non specifichiamo che show dev essere un numero/id)
+Route::get('/comics/create', [PageController::class, 'create'])->name('comics.create');
+
+// show, in /comics /{comic}->va a prendersi dal PageController il quale si prende dal Model la sua(del Model) istanza Comic $comic che passa alla rotta l'id come parametro che corrisponde all'item con l'ID corrispettivo
+Route::get('/comics/{comic}', [PageController::class, 'show'])->name('comics.show');
+
+
+Route::post('/comics', [PageController::class, 'store'])->name('comics.store');

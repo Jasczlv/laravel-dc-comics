@@ -10,20 +10,20 @@ class PageController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('home', compact('comics'));
+        return view('comics.index', compact('comics'));
     }
 
-    public function show($id)
+    public function show(Comic $comic)
     {
 
-        return ('show');
+        return view('comics.show', compact('comic'));
     }
     public function create()
     {
-        return ('create');
+        return view('comics.create');
     }
     public function store()
     {
-        return ('store');
+        return ('comics.store');
     }
 }
