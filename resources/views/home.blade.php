@@ -3,8 +3,41 @@
 <section>
     <div>
         <h1>Home Page</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequuntur sunt labore aliquam dolorum ab. Omnis magni fugiat, doloribus adipisci eos harum odit ullam explicabo eaque, eligendi possimus alias aperiam! In, esse! Veniam totam magnam officia aspernatur. Quidem, a fugiat.
-        </p>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Series</th>
+                    <th>Sale Date</th>
+                    <th>Type</th>
+                    <th>Artists</th>
+                    <th>Writers</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($comics as $comic)
+                    <tr>
+                        <td>{{$comic->id}}</td>
+                        <td>
+                            <a href="#">{{$comic->title}}</a>
+                            
+                        </td>
+                        <td><img src="{{$comic->thumb}}" alt="immagine non trovata" class="small-img"></td>
+                        <td>{{$comic->price}}</td>
+                        <td>{{$comic->series}}</td>
+                        <td>{{$comic->sale_date}}</td>
+                        <td>{{$comic->type}}</td>
+                        <td>{{$comic->artists}}</td>
+                        <td>{{$comic->writers}}</td>
+                    </tr>
+                @endforeach
+                
+            </tbody>
+        </table>
+
     </div>
 </section>

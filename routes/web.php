@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index']);
+Route::get('/{id}', [PageController::class, 'show']);
+Route::get('/create', [PageController::class, 'create']);
+Route::post('/store', [PageController::class, 'store']);
