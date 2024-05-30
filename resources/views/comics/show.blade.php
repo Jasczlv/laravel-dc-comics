@@ -23,11 +23,7 @@
         <li>Prezzo: {{ $comic->price }}</li>
       </ul>
     </div>
-    <div class="container">
-      <div>
-        {!! $comic->description !!}
-      </div>
-    </div>
+    
   </section>
 </main>
 </body>

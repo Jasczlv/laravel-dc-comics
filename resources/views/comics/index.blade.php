@@ -23,8 +23,7 @@
                     <tr>
                         <td>{{$comic->id}}</td>
                         <td>
-                            <a href="#">{{$comic->title}}</a>
-                            
+                            <a href="{{route('comics.show', $comic)}}">{{$comic->title}}</a>
                         </td>
                         <td><img src="{{$comic->thumb}}" alt="immagine non trovata" class="small-img"></td>
                         <td>{{$comic->price}}</td>
@@ -33,6 +32,18 @@
                         <td>{{$comic->type}}</td>
                         <td>{{$comic->artists}}</td>
                         <td>{{$comic->writers}}</td>
+                        <td>
+                            <div class="d-flex gap-2">
+                            <a href="{{ route('comics.edit',$comic) }}">Edit</a>
+                            <form action="{{ route('comics.destroy',$comic) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+
+                                <button class="btn btn-link link-danger">Trash</button>
+
+                            </form>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
                 

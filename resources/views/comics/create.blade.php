@@ -5,7 +5,7 @@
   <section>
     <div class="container">
       <p>comic.create</p>
-      <h2 class="fs-2">Crea una fumetto</h2>
+      <h2 class="fs-2">Crea un fumetto</h2>
     </div>
     <div class="container">
       <form action="{{ route('comics.store') }}" method="POST">
@@ -15,27 +15,42 @@
 
         <div class="mb-3">
           <label for="title" class="form-label">Titolo</label>
-          <input type="email" name="title" class="form-control" id="title" placeholder="Titolo del fumetto">
+          <input type="text" name="title" class="form-control" id="title" placeholder="Titolo del fumetto">
+        </div>
+        
+        <div class="mb-3">
+          <label for="series" class="form-label">Serie</label>
+          <input type="text" name="series" class="form-control" id="series" placeholder="Titolo del fumetto">
+        </div>
+        
+        <div class="mb-3">
+          <label for="sale_date" class="form-label">Sale Date</label>
+          <input type="text" name="sale_date" class="form-control" id="sale_date" placeholder="Titolo del fumetto">
         </div>
 
         <div class="mb-3">
-          <label for="image" class="form-label">Url Image</label>
-          <input type="email" name="thumb" class="form-control" id="image" placeholder="http://...">
+          <label for="thumb" class="form-label">Url Image</label>
+          <input type="text" name="thumb" class="form-control" id="thumb" placeholder="http://...">
         </div>
 
         <div class="mb-3">
           <label for="type" class="form-label">Tipologia</label>
-          <input type="email" name="type" class="form-control" id="type" placeholder="novel book">
+          <input type="text" name="type" class="form-control" id="type" placeholder="novel book">
         </div>
 
         <div class="mb-3">
-          <label for="cooking_time" class="form-label">Scrittore</label>
-          <input type="email" name="writers" class="form-control" id="cooking_time" placeholder="Name">
+          <label for="writers" class="form-label">Scrittore</label>
+          <input type="text" name="writers" class="form-control" id="writers" placeholder="Name">
+        </div>
+        
+        <div class="mb-3">
+          <label for="artists" class="form-label">Artista</label>
+          <input type="text" name="artists" class="form-control" id="artists" placeholder="Name">
         </div>
 
         <div class="mb-3">
-          <label for="weigth" class="form-label">Prezzo</label>
-          <input type="email" name="weigth" class="form-control" id="weigth" placeholder="$1.00">
+          <label for="price" class="form-label">Prezzo</label>
+          <input type="text" name="price" class="form-control" id="price" placeholder="$1.00">
         </div>
 
         <div class="mb-3">
